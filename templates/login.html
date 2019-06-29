@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authentication</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form action='{{ url_for('.redirect_to_new_url') }}' method="POST">
+        <table>
+            <tr>
+                <td>Username：</td>
+                <td><input type="text" name='username' placeholder="Username" ></td>
+            </tr>
+            <tr>
+                <td>Password：</td>
+                <td><input type="password" name='password' placeholder="Password"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Login"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="80%" color=#987cb9 SIZE=3>
+<footer>
+    <div align="center">
+        <p>Copy Rights Levy Hsu 2019</p>
+        <p>Contact: <a href="mailto:admin@levyhsu.com">admin@levyhsu.com</a>.</p>
+    </div>
+</footer>
+</html>

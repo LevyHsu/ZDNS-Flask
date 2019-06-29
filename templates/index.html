@@ -1,0 +1,65 @@
+<html>
+<!--LEVYHSU 2019 levyhsu.com-->
+<meta http-equiv="refresh" content="15">
+  <head>
+    <title>ZDNS with Flask</title>
+  </head>
+  <body>
+      <h1>New Queue</h1>
+       <form action='{{ url_for('.new_job') }}' method="POST">
+        <table>
+            <tr>
+                <td>Domain：</td>
+                <td><input type="text" name='Domain' placeholder = "baidu.com"></td>
+            </tr>
+            <tr>
+                <td>Threads：</td>
+                <td><input type="text" name='Threads' placeholder = "1000"></td>
+            </tr>
+            <tr>
+              <td>Dictionary:</td>
+              <td>
+                <select class="form-control" id="Dictionary" name="Dictionary">
+                <option value = "5k">5k.txt</option>
+                <option value = "20k">20k.txt</option>
+                <option value = "50k">50k.txt</option>
+                <option value = "190k">190k.txt</option>
+                <option value = "1-6ALL">1-6ALL.txt</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit Queue"></td>
+                <td><input type="submit" value="Clean  Queue" name="cleanup"></td>
+            </tr>
+        </table>
+      </form>
+      <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="80%" color=#987cb9 SIZE=3>
+      <h1>Existing Queue</h1>
+      <p>{{existing_queue|safe}}</p>
+      <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="80%" color=#987cb9 SIZE=3>
+      <h1>Finished Queue</h1>
+      <p>{{finished_queue|safe}}</p>
+      <form action='{{ url_for('.download_file') }}'>
+        <tr>
+          <select name="select_file">
+          <option value="none">Select File</option>
+          {% for filename in finished_list %}
+          <option value={{ filename }}>{{ filename }}</option>
+          {% endfor %}
+          </select> 
+        </tr>
+        <tr>
+          <td><input type="submit" value="Download"></td>
+        </tr>
+      </form>
+  </body>
+  <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="80%" color=#987cb9 SIZE=3>
+  <footer>
+    <div align="center">
+        <h5>This page refreshs every 15 seconds</h5>
+        <p>Copy Rights Levy Hsu 2019</p>
+        <p>Contact: <a href="mailto:admin@levyhsu.com">admin@levyhsu.com</a>.</p>
+    </div>
+  </footer>
+</html>
