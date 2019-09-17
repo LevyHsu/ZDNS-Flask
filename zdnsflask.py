@@ -89,7 +89,7 @@ def new_job():
 @app.route('/downloads')
 def download_file():
     filename_temp = str(request.args.get('select_file')) + ".txt"
-    print("Downloading: "filename_temp)
+    print("Downloading: " + filename_temp)
     return send_from_directory(directory="output", filename = filename_temp)
 
 def generate_subdomain_file(domain,dictfile):
