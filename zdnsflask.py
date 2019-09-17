@@ -12,7 +12,7 @@ executor = ThreadPoolExecutor(1)
 app = Flask(__name__)
 
 GOPATH = "/usr/bin/go"
-ZDNSPATH = "/usr/local/go/bin/src/github.com/zmap/zdns/zdns./zdns"
+ZDNSPATH = "/usr/local/go/bin/src/github.com/zmap/zdns/zdns/./zdns"
 
 loginusername = 'admin'
 loginpassword = 'Gk2Lx&tZ7CfZ#QgLJ#EK4S?sR7Spj9_R'
